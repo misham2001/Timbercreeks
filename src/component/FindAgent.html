@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <!-- Header Section -->
+    <header class="bg-blue-500 text-white text-center py-12">
+        <h1 class="text-4xl font-bold mt-10">Find a TimberCreeks Insurance Agent</h1>
+    </header>
+    <div class=" flex flex-col items-center justify-center p-6">
+        <div class="px-4 md:px-8 w-6/12 py-4 max-w-3xl border-b-2">
+            <h1 class="text-lg mb-4">
+                Hey </span><span class="text-xl">😄</span>,
+                <br>
+                <span class="text-4xl font-semibold">Have you Find the</span>
+                <span class="text-4xl font-semibold text-blue-700">Agent?</span>
+            </h1>
+
+            <form class="space-y-4">
+                <!-- Input and Dropdown -->
+                <label for="" class="font-bold">Find an Agent Near</label>
+                <div class="flex flex-col sm:flex-row sm:space-x-3 space-y-3 sm:space-y-0">
+                    <input type="text" placeholder="ZIP Code"
+                        class="w-full sm:w-1/2 flex-1 border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500" />
+                    <select
+                        class="w-full sm:w-auto border border-gray-300 rounded-md p-2 focus:ring-blue-500 focus:border-blue-500">
+                        <option value="50">50 miles</option>
+                        <option value="25">25 miles</option>
+                        <option value="10">10 miles</option>
+                    </select>
+                </div>
+                <!-- Button -->
+                <div class="flex justify-center">
+                    <button type="submit"
+                        class="w-full sm:w-auto p-2 bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300">
+                        Find An Agent
+                    </button>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+
+    <div class="flex flex-col items-center justify-center p-6">
+        <div
+            class="flex flex-col md:flex-row justify-between px-4 md:px-8 w-full md:w-6/12 py-4 max-w-3xl border-b-2 pb-10">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-center md:text-left">Para buscar agentes que hablen español, <br> por favor, haz clic
+                    aquí.</h1>
+            </div>
+            <div>
+                <button type="submit"
+                    class="p-2 bg-blue-600 text-white font-semibold py-2 rounded-md hover:bg-blue-700 focus:ring focus:ring-blue-300">
+                    Encontrar Un Agente
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="flex flex-col items-center justify-center">
+        <div class="bg-white p-6 text-center max-w-md pb-10 w-full sm:max-w-xs md:max-w-md lg:max-w-lg xl:max-w-xl">
+            <div class="flex items-center justify-center mb-4">
+                <p class="text-gray-700 font-medium text-lg mb-4">
+                    <span class="text-orange-500 text-2xl font-semibold mr-2">!</span>
+                    Could not locate any GEICO Insurance Agents. Please try another address.
+                </p>
+            </div>
+            <div>
+                <p class="text-gray-600 mb-4">Prefer to browse by state?</p>
+                <select
+                    class="px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-500 w-full sm:w-72">
+                    <option>Select a state</option>
+                    <!-- Add your state options here -->
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer"></div>
+    <script>
+
+
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${file}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+
+                    // Execute any scripts inside the loaded HTML
+                    const scripts = document.getElementById(id).getElementsByTagName('script');
+                    for (let script of scripts) {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+
+
+        loadHTML("navbar", "/src/component/Navbar.html");
+        loadHTML("footer", "/src/component/Footer.html");
+
+
+    </script>
+</body>
+
+</html>

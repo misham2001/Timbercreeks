@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Card</title>
+    <link href="/output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .slider {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .slider-item {
+            min-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <!-- Get Instant Access to Claims and Your Policy -->
+        <div class="p-4">
+            <div class="">
+                <div class="max-w-screen-md mx-auto text-center">
+                    <h1 class="mb-4 text-3xl font-bold">Get Instant Access to Claims and Your Policy
+                        <span class="text-indigo-600"> </span>
+                    </h1>
+                </div>
+                <div
+                    class="flex flex-col justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-6 lg:space-x-10 mt-7 mb-8">
+                    <div class="md:w-5/12">
+                        <img class="rounded-2xl border w-full hidden md:flex"
+                            src="https://img.freepik.com/free-vector/illustration-people-with-insurance-policy_53876-26675.jpg?t=st=1736754257~exp=1736757857~hmac=74f7c23a08dfb30193641e16b074c3ab3e16553ffd8798419d1f958418a02294&w=740">
+                    </div>
+
+                    <div class="flex flex-col gap-3 md:w-5/12 pt-4 space-y-4 md:space-y-0 md:space-x-0">
+                        <div class="cursor-pointer">
+                            <a href="/src/component/claims/loginPolicy.html">
+                                <div
+                                    class="flex items-center justify-between p-6 bg-white border-2  hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                    <h3 class="text-lg font-bold">Login to Your Policy
+                                    </h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <a href="/src/component/claims/report.html">
+                                <div
+                                    class="flex items-center justify-between p-6 bg-white border-2 hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                    <h3 class="text-lg font-bold">Report a Claim</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <a href="/src/component/claims/trackClaim.html">
+                                <div
+                                    class="flex items-center justify-between p-6 bg-white border-2 hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                    <h3 class="text-lg font-bold">Track a Claim</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <a href="/src/component/claims/RoadsideAssist.html">
+                                <div
+                                    class="flex items-center justify-between p-6 bg-white border-2 hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                    <h3 class="text-lg font-bold">Request Roadside
+                                        Assistance</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Insurance Card -->
+        <div class="mb-4 p-4">
+            <div class="flex flex-col justify-center items-center">
+                <h1 class="text-5xl font-bold">Insurance for Your Everyday Needs</h1>
+                <p class="text-2xl mt-4 font-semibold">Customized to fit you.</p>
+            </div>
+            <div class="flex justify-center items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 max-w-4xl">
+                    <!-- Mobile Slide View -->
+                    <div class="block md:hidden">
+                        <div class="swiper-container">
+                            <div
+                                class="swiper-wrapper flex gap-4 overflow-x-auto snap-x snap-mandatory scroll-pl-4 p-4">
+                                <!-- Vehicle Insurance Card -->
+                                <div
+                                    class="swiper-slide bg-white shadow-md rounded-lg overflow-hidden snap-center flex-shrink-0 w-72">
+                                    <img src="https://img.freepik.com/premium-photo/businessman-hand-holding-umbrella-cover-protection-red-car-toy-table_42256-3759.jpg?w=740"
+                                        alt="Vehicle Insurance" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h2 class="text-xl font-semibold mb-2">Vehicle Insurance</h2>
+                                        <p class="mb-4">
+                                            Whether you're on the road, the trail, or the water we're here to help you
+                                            get the
+                                            insurance
+                                            you need.
+                                        </p>
+                                        <a href="/src/component/InsuranceEveryday/VehicleInsurance.html"
+                                            class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                            Vehicle Insurance Types
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Property Insurance Card -->
+                                <div
+                                    class="swiper-slide bg-white shadow-md rounded-lg overflow-hidden snap-center flex-shrink-0 w-72">
+                                    <img src="https://img.freepik.com/free-photo/protect-your-house_1150-12792.jpg?t=st=1736753863~exp=1736757463~hmac=d1732f797aafb7c256d54e58ad4e3235e2b00510c2ec7f907e0985c1ca22b31d&w=740"
+                                        alt="Property Insurance" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h2 class="text-xl font-semibold mb-2">Property Insurance</h2>
+                                        <p class="mb-4">
+                                            We can help with insurance for your home and belongings whether you own or
+                                            rent.Which we can use.
+                                        </p>
+                                        <a href="/src/component/InsuranceEveryday/PropertyInsurance.html"
+                                            class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                            Property Insurance Types
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Business Insurance Card -->
+                                <div
+                                    class="swiper-slide bg-white shadow-md rounded-lg overflow-hidden snap-center flex-shrink-0 w-72">
+                                    <img src="https://img.freepik.com/free-photo/picture-two-young-businessmen-talking-rainy-station_176420-6237.jpg?t=st=1736754015~exp=1736757615~hmac=a2dff5421edbda243f2545d7514d6d8fcda440c4b27cc792c24f5ae7a7223e11&w=740"
+                                        alt="Business Insurance" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h2 class="text-xl font-semibold mb-2">Business Insurance</h2>
+                                        <p class="mb-4">
+                                            Business insurance can be tricky.
+                                            Finding the right protection doesn't have to be.
+                                            TimberCreeks can help you find what you need.
+                                        </p>
+                                        <a href="/src/component/InsuranceEveryday/BusinessInsurance.html"
+                                            class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                            Business Insurance Types
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Insurance Card -->
+                                <div
+                                    class="swiper-slide bg-white shadow-md rounded-lg overflow-hidden snap-center flex-shrink-0 w-72">
+                                    <img src="https://img.freepik.com/free-photo/closeup-unrecognizable-couple-signing-contract-with-financial-advisor_637285-11092.jpg?t=st=1736754123~exp=1736757723~hmac=ecc908d2978e7381c62b6db08f594bda97ba71c755f353f9af95e049eb3a99ec&w=740"
+                                        alt="Additional Insurance" class="w-full h-48 object-cover">
+                                    <div class="p-6">
+                                        <h2 class="text-xl font-semibold mb-2">Additional Insurance</h2>
+                                        <p class="mb-4">
+                                            Protect more of what you love. TimberCreeks offers a variety of additional
+                                            insurance
+                                            such as life, umbrella, pet, and more.
+                                        </p>
+                                        <a href="/src/component/InsuranceEveryday/AddInsurance.html"
+                                            class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                            Additional Insurance Types
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Desktop Grid View -->
+            <div class="hidden md:grid grid-cols-1 md:grid-cols-2 gap-6 p-4 w-9/12 ml-40">
+                <!-- Vehicle Insurance Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden">
+                    <img src="https://img.freepik.com/premium-photo/businessman-hand-holding-umbrella-cover-protection-red-car-toy-table_42256-3759.jpg?w=740"
+                        alt="Vehicle Insurance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">Vehicle Insurance</h2>
+                        <p class=" mb-4">
+                            Whether you're on the road, the trail, or the water we're here to help you get the
+                            insurance
+                            you need.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="/src/component/InsuranceEveryday/VehicleInsurance.html"
+                                class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                Vehicle Insurance Types
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property Insurance Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden ">
+                    <img src="https://img.freepik.com/free-photo/protect-your-house_1150-12792.jpg?t=st=1736753863~exp=1736757463~hmac=d1732f797aafb7c256d54e58ad4e3235e2b00510c2ec7f907e0985c1ca22b31d&w=740"
+                        alt="Property Insurance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">Property Insurance</h2>
+                        <p class=" mb-4">
+                            We can help with insurance for your home and belongings whether you own or rent.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="/src/component/InsuranceEveryday/PropertyInsurance.html"
+                                class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                Property Insurance Types
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Insurance Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden ">
+                    <img src="https://img.freepik.com/free-photo/picture-two-young-businessmen-talking-rainy-station_176420-6237.jpg?t=st=1736754015~exp=1736757615~hmac=a2dff5421edbda243f2545d7514d6d8fcda440c4b27cc792c24f5ae7a7223e11&w=740"
+                        alt="Business Insurance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">Business Insurance</h2>
+                        <p class=" mb-4">
+                            Business insurance can be tricky.
+                            Finding the right protection doesn't have to be.
+                            TimberCreeks can help you find what you need.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="/src/component/InsuranceEveryday/BusinessInsurance.html"
+                                class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                Business Insurance Types
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Insurance Card -->
+                <div class="bg-white shadow-md rounded-lg overflow-hidden ">
+                    <img src="https://img.freepik.com/free-photo/closeup-unrecognizable-couple-signing-contract-with-financial-advisor_637285-11092.jpg?t=st=1736754123~exp=1736757723~hmac=ecc908d2978e7381c62b6db08f594bda97ba71c755f353f9af95e049eb3a99ec&w=740"
+                        alt="Additional Insurance" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h2 class="text-xl font-semibold mb-2">Additional Insurance</h2>
+                        <p class="mb-4">
+                            Protect more of what you love. TimberCreeks offers a variety of additional insurance
+                            such as life, umbrella, travel, overseas, pet, and more.
+                        </p>
+                        <div class="flex justify-center">
+                            <a href="/src/component/InsuranceEveryday/AddInsurance.html"
+                                class="text-amber-600 font-medium border border-amber-600 px-4 py-2 rounded hover:bg-amber-100">
+                                Additional Insurance Types
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Explore TimberCreeks Living -->
+        <div class="p-4">
+            <div class="mt-4">
+                <div class="max-w-screen-md mx-auto text-center">
+                    <h1 class="mb-4 text-3xl font-bold">Explore TimberCreeks Living
+                        <span class="text-indigo-600"> </span>
+                    </h1>
+                </div>
+                <div
+                    class="flex flex-col justify-center space-y-5 md:flex-row md:space-y-0 md:space-x-6 lg:space-x-10 md:mt-10">
+                    <div class="md:w-5/12 mt-10">
+                        <img class="rounded-2xl w-full hidden md:flex"
+                            src="https://img.freepik.com/free-vector/insurance-office-illustration-people-insurance-service-try-save-real-esttae-car-health-money_613284-2383.jpg?t=st=1736754307~exp=1736757907~hmac=4d2cedc9001fc782c12d1e214e5e0d19f899f9212a9e180cd4340ad93ce3b87f&w=900">
+                    </div>
+
+                    <div class="flex flex-col md:w-4/12 w-full">
+                        <div class="cursor-pointer">
+                            <a href="" class="block">
+                                <span
+                                    class="top-0 left-0 w-full h-full bg-indigo-500 rounded-lg dark:bg-gray-200"></span>
+                                <div
+                                    class="p-6 bg-white border-2  hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500 flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-bold">
+                                            Driving and safety tips</h3>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <a href="" class="block">
+                                <span
+                                    class="top-0 left-0 w-full h-full ml-1 bg-indigo-500 rounded-lg dark:bg-gray-200"></span>
+                                <div
+                                    class="p-6 border-2 bg-white hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500 flex items-center justify-between">
+                                    <div>
+                                        <h3 class="text-lg font-bold">
+                                            Saving money</h3>
+                                    </div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer">
+                            <a href="#" class="block">
+                                <span class="top-0 left-0 w-full h-full ml-1"></span>
+                                <div
+                                    class="flex items-center justify-between p-6 bg-white border-2 hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                    <h3 class="text-lg font-bold">
+                                        Protect your home
+                                    </h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="cursor-pointer ">
+                            <span class="top-0 left-0 w-full h-full ml-1 rounded-lg"></span>
+                            <div
+                                class="p-6 bg-white  border-2 hover:border-amber-600 dark:border-gray-400 rounded-lg hover:scale-105 transition duration-500">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-bold ">
+                                        TimberCreeks Commercials</h3>
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="black" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card -->
+        <div>
+            <div class="p-4 mt-8  flex justify-center">
+                <figure class="md:flex max-w-5xl bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+                    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                        <blockquote>
+                            <p class="text-sm dark:text-slate-100">
+                                *Some discounts, coverages, payment plans and features are not available in all states
+                                or all TimberCreeks companies. Average savings amount based on national TimberCreeks New
+                                Policyholder
+                                survey data through October 2024. Customer satisfaction based on an independent study
+                                conducted by Alan Newman Research, published 2024. The TimberCreeks App and site
+                                received #1
+                                rankings according to Forrester's 2021 US Mobile Auto Insurance Functionality Benchmark.
+                                TimberCreeks is a registered service mark of
+                                Government Employees Insurance Company, Washington, D.C. 20076; a Berkshire Hathaway
+                                Inc.
+                                subsidiary. ©2025 TimberCreeks.
+                            </p>
+                        </blockquote>
+                    </div>
+                </figure>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

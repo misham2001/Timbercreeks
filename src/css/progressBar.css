@@ -1,0 +1,46 @@
+    /* Container for the progress bar */
+    .progress-bar-container {
+            display: flex;
+            width: 50%;
+            height: 1rem;
+            background-color: #e5e7eb;
+            /* Light Gray */
+            border-radius: 9999px;
+            /* Fully rounded */
+            overflow: hidden;
+            background-color: #374151;
+            /* Dark gray for dark mode */
+            transition: all 0.5s ease;
+        }
+
+        /* The actual progress bar inside the container */
+        .progress-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            background-color: #3b82f6;
+            /* Blue */
+            color: white;
+            font-size: 0.75rem;
+            /* Smaller text size */
+            text-align: center;
+            white-space: nowrap;
+            border-radius: 9999px;
+            /* Rounded bar */
+            transition: width 0.5s ease;
+            /* Smooth transition on width change */
+        }
+
+        /* Dark mode style */
+        @media (prefers-color-scheme: dark) {
+            .progress-bar-container {
+                background-color: #1f2937;
+                /* Darker gray for dark mode */
+            }
+
+            .progress-bar {
+                background-color: #2563eb;
+                /* Dark blue for dark mode */
+            }
+        }

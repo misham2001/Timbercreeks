@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoginPolicy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/output.css">
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div>
+        <div class="flex  lg:flex-row bg-gray-900 justify-around py-10">
+            <h1 class="text-3xl lg:text-5xl text-white font-bold text-center">Report a Claim</h1>
+            <h1 class="text-3xl lg:text-5xl text-white font-bold text-center">sdfghj</h1>
+        </div>
+    
+        <div class="mt-10 px-4 lg:px-0 lg:ml-20">
+            <div>
+                <h4 class="text-2xl lg:text-3xl font-bold text-center lg:text-left">
+                    What kind of GEICO policy do you have?
+                </h4>
+            </div>
+    
+            <div class="mb-4 max-w-sm mx-auto lg:mx-15 mt-8">
+                <label class="block text-gray-700 font-bold mb-2" for="dropdown">
+                    Policy Type
+                </label>
+                <select
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                    id="dropdown">
+                    <option value="" disabled selected>Auto/Cycle</option>
+                    <option value="option1">Life Policy</option>
+                    <option value="option2">Medical Policy</option>
+                    <option value="option3">Travel Policy</option>
+                </select>
+            </div>
+    
+            <div class="mb-4 max-w-sm mx-auto lg:mx-15 mt-8">
+                <label class="block text-gray-700 font-bold mb-2" for="policyNumber">
+                    Policy Number
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                    id="policyNumber" type="text" placeholder="Policy Number">
+            </div>
+    
+            <div class="mb-4 max-w-sm mx-auto lg:mx-15 mt-8">
+                <label class="block text-gray-700 font-bold mb-2" for="firstName">
+                    First Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                    id="FirstName" type="text" placeholder="First Name">
+            </div>
+    
+            <div class="mb-4 max-w-sm mx-auto lg:mx-15 mt-8">
+                <label class="block text-gray-700 font-bold mb-2" for="secondName">
+                    Second Name
+                </label>
+                <input
+                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                    id="SecondName" type="text" placeholder="Second Name">
+            </div>
+    
+            <div class="mb-4 max-w-sm mx-auto lg:mx-15 mt-8 flex flex-col lg:flex-row items-center justify-between">
+                <a href="" class="text-blue-600 hover:underline mb-4 lg:mb-0 text-center lg:text-left">Log in with your user ID and password.</a>
+                <button type="button" id="continueButton"
+                    class="text-white bg-amber-500 hover:bg-amber-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-xl px-8 py-2 text-center">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+
+    <div id="footer1"></div>
+    <script>
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${file}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+
+                    // Execute any scripts inside the loaded HTML
+                    const scripts = document.getElementById(id).getElementsByTagName('script');
+                    for (let script of scripts) {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+
+
+        loadHTML("navbar", "../Navbar.html");
+        loadHTML("footer1", "./Footer1.html");
+
+
+       
+    </script>
+</body>
+
+</html>

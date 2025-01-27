@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimberCreeks</title>
+
+    <link href="../output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./assets/styles/styles.css" /> -->
+    <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <div id="navbar"></div>
+    <div>
+        <div class="flex lg:flex-row bg-gray-900 justify-around py-10">
+            <h1 class="text-3xl lg:text-5xl text-white font-bold text-center">Report a Claim</h1>
+            <h1 class="text-3xl lg:text-5xl text-white font-bold text-center">sdfghj</h1>
+        </div>
+
+        <div class="mt-10 px-4 lg:px-0 lg:ml-10">
+            <div>
+                <div class="ml-60">
+                    <h4 class="text-2xl lg:text-3xl font-bold lg:text-left">
+                        To locate your claim, please provide the following information.
+                    </h4>
+                </div>
+                <div class="ml-60">
+                    <div class="mb-4 max-w-sm lg:mx-15 mt-8 ">
+                        <label class="block text-gray-700 font-bold mb-2" for="ClaimNumber">
+                            Claim Number
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                            id="ClaimNumber" type="text" placeholder="ClaimNumber">
+                    </div>
+
+                    <div class="mb-4 max-w-sm lg:mx-15 mt-8">
+                        <label class="block text-gray-700 font-bold mb-2" for="First Name">
+                            Your First Name
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                            id="FirstName" type="text" placeholder="FirstName">
+                    </div>
+
+                    <div class="mb-4 max-w-sm lg:mx-15 mt-8">
+                        <label class="block text-gray-700 font-bold mb-2" for="secondName">
+                            Your Last Name
+                        </label>
+                        <input
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                            id="SecondName" type="text" placeholder="Second Name">
+                    </div>
+                    <div class="mb-4 max-w-sm lg:mx-15 flex flex-col lg:flex-row  justify-between">
+                        <button type="button" id="continueButton"
+                            class="text-white bg-amber-500 hover:bg-amber-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-xl px-8 py-2 text-center">
+                            Continue
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex ml-60">
+                <div>
+                    <p>If you are a policyholder, you can log in with your user ID and password if you prefer.</p>
+                    <h1>Manage a Claim on a GEICO Portfolio Policy</h1>
+                    <div class="mb-4 max-w-sm lg:mx-15 mt-4">
+                        <select
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline border-gray-500"
+                            id="dropdown">
+                            <option value="" disabled selected>Auto/Cycle</option>
+                            <option value="option1">Life Policy</option>
+                            <option value="option2">Medical Policy</option>
+                            <option value="option3">Travel Policy</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="ml-60">
+                <h1>Choose a Portfolio Product type to see how to manage a claim.</h1>
+                <div class="mt-4 max-w-4xl">
+                    <ul class="flex flex-col">
+                        <li class="bg-white my-2 shadow-lg border" x-data="accordion(1)">
+                            <h2 @click="handleClick()"
+                                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
+                                <span>FAQs</span>
+                                <svg :class="handleRotate()"
+                                    class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                                    </path>
+                                </svg>
+                            </h2>
+                            <div x-ref="tab" :style="handleToggle()"
+                                class="border-l-2 border-purple-600 overflow-hidden max-h-0 duration-500 transition-all">
+                                <h1 class="ml-3">Who can see claims online?</h1>
+                                <p class="pl-6 text-gray-900">
+                                    Anyone 18 and over who is identified on a claim as a vehicle or property owner,
+                                    driver or passenger.
+                                </p>
+                                <h1 class="ml-3">Where can I find the claim number?</h1>
+                                <p class="pl-6 text-gray-900">
+                                    The GEICO Claims Team has provided the 16 digit claim number to you over the phone
+                                    or on claim documents.
+                                </p>
+                                <h1 class="ml-3">Why can’t I access the claim?</h1>
+                                <p class="pl-6 text-gray-900">
+                                    GEICO Claims Express requires the information in our system to directly match the
+                                    inputs you have entered.
+                                </p>
+                            </div>
+                        </li>
+
+                        <li class="bg-white my-2 shadow-lg border" x-data="accordion(2)">
+                            <h2 @click="handleClick()"
+                                class="flex flex-row justify-between items-center font-semibold p-3 cursor-pointer">
+                                <span>Online Claims</span>
+                                <svg :class="handleRotate()"
+                                    class="fill-current text-purple-700 h-6 w-6 transform transition-transform duration-500"
+                                    viewBox="0 0 20 20">
+                                    <path
+                                        d="M13.962,8.885l-3.736,3.739c-0.086,0.086-0.201,0.13-0.314,0.13S9.686,12.71,9.6,12.624l-3.562-3.56C5.863,8.892,5.863,8.611,6.036,8.438c0.175-0.173,0.454-0.173,0.626,0l3.25,3.247l3.426-3.424c0.173-0.172,0.451-0.172,0.624,0C14.137,8.434,14.137,8.712,13.962,8.885 M18.406,10c0,4.644-3.763,8.406-8.406,8.406S1.594,14.644,1.594,10S5.356,1.594,10,1.594S18.406,5.356,18.406,10 M17.521,10c0-4.148-3.373-7.521-7.521-7.521c-4.148,0-7.521,3.374-7.521,7.521c0,4.147,3.374,7.521,7.521,7.521C14.148,17.521,17.521,14.147,17.521,10">
+                                    </path>
+                                </svg>
+                            </h2>
+                            <div class="border-l-2 border-purple-600 overflow-hidden max-h-0 duration-500 transition-all"
+                                x-ref="tab" :style="handleToggle()">
+                                <p class="p-3 text-gray-900">
+                                    View vehicle damage pictures and reports <br>
+                                    Choose and schedule your vehicle estimate and repair <br>
+                                    Sign eligible claim forms <br>
+                                    Upload photos and documents <br>
+                                    View your claim payments <br>
+                                    Communicate with your GEICO Claims Team <br>
+                                </p>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="footer1"></div>
+    <script>
+
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${file}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+
+                    // Execute any scripts inside the loaded HTML
+                    const scripts = document.getElementById(id).getElementsByTagName('script');
+                    for (let script of scripts) {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+
+
+        loadHTML("navbar", "../Navbar.html");
+        loadHTML("footer1", "./Footer1.html");
+
+        document.addEventListener('alpine:init', () => {
+            Alpine.store('accordion', {
+                tab: 0
+            });
+
+            Alpine.data('accordion', (idx) => ({
+                init() {
+                    this.idx = idx;
+                },
+                idx: -1,
+                handleClick() {
+                    this.$store.accordion.tab = this.$store.accordion.tab === this.idx ? 0 : this.idx;
+                },
+                handleRotate() {
+                    return this.$store.accordion.tab === this.idx ? 'rotate-180' : '';
+                },
+                handleToggle() {
+                    return this.$store.accordion.tab === this.idx ? `max-height: ${this.$refs.tab.scrollHeight}px` : '';
+                }
+            }));
+        })
+
+
+    </script>
+
+</body>
+
+</html>

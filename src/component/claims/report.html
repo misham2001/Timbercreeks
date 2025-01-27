@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report a Claim</title>
+    <link href="../output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="navbar"></div>
+    <div>
+        <div class="flex  lg:flex-row bg-gray-900 justify-around py-10 text-center lg:text-left">
+            <h1 class="text-3xl lg:text-5xl text-white font-bold">Report a Claim</h1>
+            <h1 class="text-3xl lg:text-5xl text-white font-bold">sdfghj</h1>
+        </div>
+        <div class="mt-10 mx-5 lg:ml-50">
+            <div>
+                <h4 class="text-2xl sm:text-3xl lg:text-5xl font-bold text-center lg:text-left">
+                    Who is reporting the claim today?
+                </h4>
+            </div>
+            <div class="flex flex-col items-center lg:items-start">
+                <label
+                    class="flex bg-gray-100 w-full max-w-md font-medium text-base sm:text-lg lg:text-xl text-gray-700 border rounded-md px-3 py-2 my-3 hover:bg-indigo-300 cursor-pointer">
+                    <input type="radio">
+                    <i class="pl-2">I am insured with TimberCreeks</i>
+                </label>
+
+                <label
+                    class="flex bg-gray-100 w-full max-w-md font-medium text-base sm:text-lg lg:text-xl text-gray-700 border rounded-md px-3 py-2 my-3 hover:bg-indigo-300 cursor-pointer">
+                    <input type="radio">
+                    <i class="pl-2">I had an incident with a TimberCreeks customer</i>
+                </label>
+
+                <label
+                    class="flex bg-gray-100 w-full max-w-md font-medium text-base sm:text-lg lg:text-xl text-gray-700 border rounded-md px-3 py-2 my-3 hover:bg-indigo-300 cursor-pointer">
+                    <input type="radio">
+                    <i class="pl-2">I represent an insurance company</i>
+                </label>
+
+                <label
+                    class="flex bg-gray-100 w-full max-w-md font-medium text-base sm:text-lg lg:text-xl text-gray-700 border rounded-md px-3 py-2 my-3 hover:bg-indigo-300 cursor-pointer">
+                    <input type="radio">
+                    <i class="pl-2">I am someone not listed here</i>
+                </label>
+            </div>
+        </div>
+        <div class="flex justify-center lg:justify-start lg:ml-60 mt-5">
+            <button
+                class="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-bold rounded-full transition-transform transform-gpu hover:-translate-y-1 hover:shadow-lg">
+                Click me!
+            </button>
+        </div>
+    </div>
+
+    <div id="footer1"></div>
+    <script>
+        function loadHTML(id, file) {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Failed to load ${file}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+
+                    // Execute any scripts inside the loaded HTML
+                    const scripts = document.getElementById(id).getElementsByTagName('script');
+                    for (let script of scripts) {
+                        const newScript = document.createElement('script');
+                        if (script.src) {
+                            newScript.src = script.src;
+                        } else {
+                            newScript.textContent = script.textContent;
+                        }
+                        document.body.appendChild(newScript);
+                    }
+                })
+                .catch(error => console.error(error));
+        }
+
+
+        loadHTML("navbar", "../Navbar.html");
+        loadHTML("footer1", "./Footer1.html");
+    </script>
+</body>
+
+</html>
