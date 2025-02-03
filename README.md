@@ -1,10 +1,6 @@
 # Timbercreeks
-#Initialize a package.json
-npm init -y
 
-#Install Node Modules 
-open terminam in vs code 
-1.npm install
+# Open terminam in vs code 
 
 home.html is the main file 
 for Run localhot command : http-server -a localhost
